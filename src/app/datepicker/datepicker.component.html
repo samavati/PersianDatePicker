@@ -1,0 +1,43 @@
+<div class="wrapper">
+  <div class="selected-week-day">
+    <div class="week-day-name">{{selectedDate.weekDayName}}</div>
+    <div class="calendar-close">
+      <i class="material-icons">
+        clear
+      </i>
+    </div>
+  </div>
+  <div class="nav">
+    <div (click)="onPrevMonth()">
+      <i class="material-icons">
+        chevron_left
+      </i>
+    </div>
+    <div class="mouth-year">
+      <p [@navIn] *ngFor="let item of selectedDateArray">{{item}}</p>
+    </div>
+    <div (click)="onNextMonth()">
+      <i class="material-icons">
+        chevron_right
+      </i>
+    </div>
+  </div>
+  <div class="main">
+    <div class="calendar-header">
+      <div class='box' *ngFor="let weekDay of weekDays">
+        <div class='content'>{{weekDay}}</div>
+      </div>
+    </div>
+    <div class="calnedar-body">
+      <div class='box' [@daysIn] *ngFor="let day of datePickerMonth">
+        <div class='content' appHighlightSelectedDate [thisDay]="day" [selectedDay]="selectedDate"
+          [ngClass]="{today: day.isThisToday, currentMonth:day.isThisMonth}" (click)="onDateClick(day)">
+          {{day.dayDate}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="action">
+    <div (click)="onGoToToday()">برو به امروز</div>
+    <div>تایید</div>
+  </div>
+</div>

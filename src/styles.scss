@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: Yekan;
+  src: url('./assets/fonts/Yekan.eot');
+  src: url('./assets/fonts/Yekan.eot?#iefix') format('Yekan-opentype'),
+       url('./assets/fonts/Yekan.woff') format('woff'),
+       url('./assets/fonts/Yekan.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: Yekan;
+  src: url('./assets/fonts/yekan-regular.eot');
+  src: url('./assets/fonts/yekan-regular.eot?#iefix') format('yekan-regular-opentype'),
+       url('./assets/fonts/yekan-regular.woff') format('woff'),
+       url('./assets/fonts/yekan-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  width: 100%;
+  padding: 100px;
+  font-family: Yekan;
+  font-weight: normal;
+}

@@ -1,0 +1,114 @@
+@import "./styles/variables";
+@import "./styles/mixins/flex";
+%nonMarkAble {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.wrapper {
+  @extend %nonMarkAble;
+  width: 220px;
+  box-shadow: 0px 13px 68px 0 rgba(102, 102, 143, 0.55);
+  background-color: $color-background;
+  border-radius: 12px;
+  .selected-week-day {
+    @include perfectCenter;
+    background-color: darken($color: $color-primary, $amount: 20);
+    color: $color-text-on-darken-primary;
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    font-size: 9px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    .calendar-close {
+      position: absolute;
+      cursor: pointer;
+      height: 12px;
+      right: 5px;
+      i {
+        font-size: 12px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.nav {
+  @include flexRow;
+  height: 100px;
+  background-color: $color-primary;
+  color: $color-text-on-primary;
+  div {
+    cursor: pointer;
+  }
+  .mouth-year {
+    @include flexColumn;
+  }
+}
+.main {
+  direction: rtl;
+  padding: 0 5px;
+  font-size: 14px;
+  .calendar-header,
+  .calnedar-body {
+    @include flexWrap;
+  }
+  .calendar-header {
+    color: #808080;
+    font-weight: bold;
+  }
+  .calnedar-body {
+    border-bottom: 1px solid #ccc7c782;
+    border-top: 1px solid #ccc7c782;
+    padding: 10px 0;
+    .content {
+      border-radius: 50%;
+      color: rgba(136, 136, 136, 0.432);
+      cursor: pointer;
+      &.today {
+        background-color: $color-secoundary;
+        color: #fff !important;
+      }
+      &.currentMonth {
+        color: #888;
+      }
+      &.selected-date {
+        background-color: #4739a4;
+        color: #fff !important;
+      }
+    }
+  }
+}
+.action {
+  @include flexRow;
+  div {
+    height: 50px;
+    width: 100px;
+    padding: 5px;
+    color: #4739a4;
+    cursor: pointer;
+    @include perfectCenter;
+  }
+}
+.box {
+  position: relative;
+  width: 14.285%; /* desired width */
+}
+.box:before {
+  content: "";
+  display: block;
+  padding-top: 100%; /* initial ratio of 1:1*/
+}
+.content {
+  @include perfectCenter;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}

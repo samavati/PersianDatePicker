@@ -1,16 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { AppComponent } from './app.component';
+import { DatepickerComponent } from './datepicker/datepicker.component';
+import { HighlightSelectedDateDirective } from './datepicker/directives/highlight-selected-date.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DatepickerComponent,
+    HighlightSelectedDateDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,28 @@
+%display {
+  display: flex;
+}
+@mixin flexRow {
+  @extend %display;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin flexColumn {
+  @extend %display;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin flexWrap {
+  @extend %display;
+  flex-wrap: wrap;
+}
+
+@mixin perfectCenter {
+  @extend %display;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
